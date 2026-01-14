@@ -87,6 +87,29 @@ names_update()
 
 paddle_limit = 250
 # Functions to move paddles
+def paddle_a_up():
+    y = paddle_a.ycor()
+    if y < paddle_limit:
+        y += 40
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    if y > -paddle_limit:
+        y -= 40
+    paddle_a.sety(y)
+
+def paddle_b_up():
+    y = paddle_b.ycor()
+    if y < paddle_limit:
+        y += 40
+    paddle_b.sety(y)
+
+def paddle_b_down():
+    y = paddle_b.ycor()
+    if y > -paddle_limit:
+        y -= 40
+    paddle_b.sety(y)
 
 
 # Reduce paddle height
@@ -140,5 +163,6 @@ while True:
     if (-350 < ball.xcor() < -340) and (paddle_a.ycor() - paddle_a.shapesize()[0] * 10 < ball.ycor() < paddle_a.ycor() + paddle_a.shapesize()[0] * 10):
         ball.setx(-340)
         ball.dx *= -1
+
 
 
