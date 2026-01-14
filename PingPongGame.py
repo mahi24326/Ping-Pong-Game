@@ -38,7 +38,22 @@ score_a = 0
 score_b = 0
 
 # Paddle A
+paddle_a = turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("teal")
+paddle_a.shapesize(stretch_wid=5, stretch_len=1)  # Initial height of the paddle
+paddle_a.penup()
+paddle_a.goto(-350, 0)
 
+# Paddle B
+paddle_b = turtle.Turtle()
+paddle_b.speed(0)
+paddle_b.shape("square")
+paddle_b.color("palevioletred")
+paddle_b.shapesize(stretch_wid=5, stretch_len=1)  # Initial height of the paddle
+paddle_b.penup()
+paddle_b.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
@@ -125,4 +140,5 @@ while True:
     if (-350 < ball.xcor() < -340) and (paddle_a.ycor() - paddle_a.shapesize()[0] * 10 < ball.ycor() < paddle_a.ycor() + paddle_a.shapesize()[0] * 10):
         ball.setx(-340)
         ball.dx *= -1
+
 
